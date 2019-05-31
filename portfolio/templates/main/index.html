@@ -1,0 +1,88 @@
+{% load static %}
+<html>
+    <head>
+        <title>Andrei Lozhkin</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'main/css/fontello.css' %}">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inconsolata" />
+        <script type="text/javascript" src="{% static 'main/main.js' %}"></script>
+    </head>
+
+    <body>
+      <div class="grid-layout">
+        <header class="header">
+          <div class="header-container">
+            <h1 class="header__name"><a href="/">Andrei Lozhkin</a></h1>
+            <nav class="header__nav">
+              <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#projects">Projects</a></li>
+              </ul>
+            </nav>
+            <a href="javascript:void(0)" class="mobile-menu" onclick="toggleMenu()">
+              <span class="icon-menu"></span>
+            </a>
+          </div>
+
+        </header>
+        <main class="main">
+          <section class="hero-wrapper">
+            <div class="hero-container">
+              <img class="avatar" src="{% static 'main/img/avatar.jpg' %}" alt="avatar">
+              <div class="social-icons">
+                <a href="#linkedin" class="icon icon-linkedin-squared"></a>
+                <a href="#facebook" class="icon icon-facebook-squared"></a>
+                <a href="#github" class="icon icon-github-squared"></a>
+              </div>
+            </div>
+          </section>
+          <section class="about-wrapper">
+            <a class="anchor-offset" name="about"></a>
+            <div class="about-container">
+              <div class="cli">
+                <div class="cli-tab">
+                  <p>about.py</p>
+                </div>
+                <p class="cli-code">
+                  <span class="cli-command"> >>> from web_developers import Andrei </span><br><br>
+
+                  <span class="cli-command"> >>> Andrei.origin </span><br>
+                  Syktyvkar, RU <br><br>
+
+                  <span class="cli-command"> >>> Andrei.education </span><br>
+                  major: “Petroleum Engineering”<br>
+                  university: “Ukhta State Technical University”<br>
+                  graduation_year: 2016<br><br>
+
+                  <span class="cli-command"> >>> Andrei.work_experience.latest </span><br>
+                  company: “MSNA Group”<br>
+                  role: “Webmaster”<br>
+                  start_date: “February 2018”<br>
+                  end_date: “May 2019”<br><br>
+
+                  <span class="cli-command"> >>> Andrei.resume </span><br>
+                  <a href="{% static 'main/CV - Andrei Lozhkin.pdf' %}" download> andrei_lozhkin.pdf </a><br><br>
+
+                  <span class="cli-command"> >>> Andrei.email </span><br>
+                  <a href="mailto:andreilozhkindev@gmail.com">andreilozhkindev@gmail.com</a><br><br>
+
+                  <span class="cli-command"> >>> exit() </span>
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="resume-wrapper">
+            <div class="resume-container">
+              <h2 class="resume-headline">RESUME</h2>
+              <h3 class="resume-experience">WORK EXPERIENCE</h3>
+            </div>
+          </section>
+
+        </main>
+        <footer class="footer">
+        </footer>
+      </div>
+    </body>
+</html>
