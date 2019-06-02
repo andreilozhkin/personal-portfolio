@@ -1,8 +1,7 @@
 from django.shortcuts import render
-
+from .models import Job
 
 def index(request):
-    # latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    # context = {'latest_question_list': latest_question_list}
-    context = {'latest_question_list': 0}
+    jobs = Job.objects.all()
+    context = {'jobs': jobs}
     return render(request, 'main/index.html', context)
