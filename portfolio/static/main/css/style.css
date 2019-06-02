@@ -81,6 +81,14 @@ a {
   height: 3rem;
   background: #1f2229;
   background-size: cover;
+  transition: transform 0.5s;
+}
+
+.header.is-hidden {
+    transform: translateY(-500%);
+}
+.header.is-visible {
+    transform: translateY(0);
 }
 
 .main {
