@@ -300,6 +300,7 @@ a {
   padding: 20px;
   border-radius: 50%;
   margin-left: -114px;
+  object-fit: cover;
 }
 
 .resume-card__content {
@@ -349,6 +350,11 @@ a {
 
 .project__card:hover {
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.project__name {
+  font-weight: 600;
+  color: #79E860;
 }
 
 .project__tag {
