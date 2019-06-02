@@ -86,203 +86,97 @@
           <!--END CLI ABOUT SECTION-->
 
           <!--START RESUME SECTION-->
-          <a class="" id="resume"></a>
-          <section class="resume-wrapper">
-            <div class="resume-container">
-              <h2 class="mt-1">RESUME</h2>
-              <div>
-                <h3>WORK EXPERIENCE</h3>
-                <div class="pt-1 line-separator"></div>
-                <div class="resume-card">
-                  <img class="resume-card__image" src="{% static 'main/img/avatar.jpg' %}" alt="MSNA Group"/>
-                  <div class="resume-card__content">
-                    <div class="resume-card__head">
-                      <div>
-                        <p class="card__company-name">MSNA Group</p>
-                        <p class="card__role">Webmaster</p>
+          {% if jobs or education %}
+            <a class="" id="resume"></a>
+            <section class="resume-wrapper">
+              <div class="resume-container">
+                <h2 class="mt-1">RESUME</h2>
+
+                <!--work experience-->
+                {% if jobs %}
+                  <div>
+                    <h3>WORK EXPERIENCE</h3>
+                    <div class="pt-1 line-separator"></div>
+                    {% for job in jobs %}
+                      <div class="resume-card">
+                        <img class="resume-card__image" src="{{job.logo.url}}" alt="{{job.company}}"/>
+                        <div class="resume-card__content">
+                          <div class="resume-card__head">
+                            <div>
+                              <p class="card__company-name">{{job.company}}</p>
+                              <p class="card__role">{{job.role}}</p>
+                            </div>
+                            <div>
+                              <p class="card__year">{{job.date}}</p>
+                              <p class="card__city">{{job.location}}</p>
+                            </div>
+                          </div>
+                          <div class="mt-1 card__summary">
+                            <p>{{job.description}}</p>
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <p class="card__year">2018 - 2019</p>
-                        <p class="card__city">Bangkok, TH</p>
-                      </div>
-                    </div>
-                    <div class="mt-1 card__summary">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                      </p>
-                    </div>
+                    {% endfor %}
                   </div>
-                </div>
-                <div class="resume-card">
-                  <img class="resume-card__image" src="{% static 'main/img/avatar.jpg' %}" alt="MSNA Group"/>
-                  <div class="resume-card__content">
-                    <div class="resume-card__head">
-                      <div>
-                        <p class="card__company-name">Peace And Happiness Foundation</p>
-                        <p class="card__role">Webmaster</p>
+                {% endif %}
+                <!--end work experience-->
+
+                <!--education-->
+                {% if education %}
+                  <div>
+                    <h3 class="mt-3">EDUCATION</h3>
+                    <div class="pt-1 line-separator"></div>
+                    {% for ed in education %}
+                      <div class="resume-card">
+                        <img class="resume-card__image" src="{{ed.logo.url}}" alt="{{ed.university}}"/>
+                        <div class="resume-card__content">
+                          <div class="resume-card__head">
+                            <div>
+                              <p class="card__company-name">{{ed.university}}</p>
+                              <p class="card__role">{{ed.major}}</p>
+                            </div>
+                            <div>
+                              <p class="card__year">{{ed.date}}</p>
+                              <p class="card__city">{{ed.location}}</p>
+                            </div>
+                          </div>
+                          <div class="mt-1 card__summary">
+                            <p>{{ed.description}}</p>
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <p class="card__year">2322 - 2022</p>
-                        <p class="card__city">Bangkok, TH</p>
-                      </div>
-                    </div>
-                    <div class="mt-1 card__summary">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                      </p>
-                    </div>
+                    {% endfor %}
                   </div>
-                </div>
-                <div class="resume-card">
-                  <img class="resume-card__image" src="{% static 'main/img/avatar.jpg' %}" alt="MSNA Group"/>
-                  <div class="resume-card__content">
-                    <div class="resume-card__head">
-                      <div>
-                        <p class="card__company-name">MSNA Group</p>
-                        <p class="card__role">Webmaster</p>
-                      </div>
-                      <div>
-                        <p class="card__year">2322 - 2022</p>
-                        <p class="card__city">Bangkok, TH</p>
-                      </div>
-                    </div>
-                    <div class="mt-1 card__summary">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                {% endif %}
+                <!--end education-->
               </div>
-              <div>
-                <h3 class="mt-3">EDUCATION</h3>
-                <div class="pt-1 line-separator"></div>
-                <div class="resume-card">
-                  <img class="resume-card__image" src="{% static 'main/img/avatar.jpg' %}" alt="MSNA Group"/>
-                  <div class="resume-card__content">
-                    <div class="resume-card__head">
-                      <div>
-                        <p class="card__company-name">MSNA Group</p>
-                        <p class="card__role">Webmaster</p>
-                      </div>
-                      <div>
-                        <p class="card__year">2018 - 2019</p>
-                        <p class="card__city">Bangkok, TH</p>
-                      </div>
-                    </div>
-                    <div class="mt-1 card__summary">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="resume-card">
-                  <img class="resume-card__image" src="{% static 'main/img/avatar.jpg' %}" alt="MSNA Group"/>
-                  <div class="resume-card__content">
-                    <div class="resume-card__head">
-                      <div>
-                        <p class="card__company-name">MSNA Group</p>
-                        <p class="card__role">Webmaster</p>
-                      </div>
-                      <div>
-                        <p class="card__year">2322 - 2022</p>
-                        <p class="card__city">Bangkok, TH</p>
-                      </div>
-                    </div>
-                    <div class="mt-1 card__summary">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="resume-card">
-                  <img class="resume-card__image" src="{% static 'main/img/avatar.jpg' %}" alt="MSNA Group"/>
-                  <div class="resume-card__content">
-                    <div class="resume-card__head">
-                      <div>
-                        <p class="card__company-name">MSNA Group</p>
-                        <p class="card__role">Webmaster</p>
-                      </div>
-                      <div>
-                        <p class="card__year">2322 - 2022</p>
-                        <p class="card__city">Bangkok, TH</p>
-                      </div>
-                    </div>
-                    <div class="mt-1 card__summary">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+            </section>
+          {% endif %}
           <!--END RESUME SECTION-->
 
           <!--START PROJECTS SECTION-->
-          <a class="" id="projects"></a>
-          <h2 class="mt-2" style="color:white">PROJECTS</h2>
-          <section class="projects-grid">
-            <a href="#project" class="project__card">
-              <img class="project__image" src="{% static 'main/img/avatar.jpg' %}"/>
-              <p class="mt-1 project__summary">
-                Joined a team of product and software engineers within IDEO to design, prototype, build and ship digital products. Worked as both a designer and developer on a variety of internal and client projects.
-              </p>
-            </a>
-            <a href="#project#" class="project__card">
-              <img class="project__image" src="{% static 'main/img/avatar.jpg' %}"/>
-              <p class="mt-1 project__summary">
-                Joined a team of product and software engineers within IDEO to design, prototype, build and ship digital products. Worked as both a designer and developer on a variety of internal and client projects.
-              </p>
-              <div class="mt-1">
-                <span href="#CSS" class="project__tag">Django</span>
-                <span href="#CSS" class="project__tag">React</span>
-                <span class="project__tag">HTML</span>
-                <span href="#CSS" class="project__tag">CSS</span>
-                <span href="#CSS" class="project__tag">CSS</span>
-                <span href="#CSS" class="project__tag">CSS</span>
-              </div>
-            </a>
-          </section>
+          {% if projects %}
+            <a class="" id="projects"></a>
+            <h2 class="mt-2" style="color:white">PROJECTS</h2>
+            <section class="projects-grid">
+              {% for project in projects %}
+                <a href="{{project.url}}" class="project__card">
+                  <img class="project__image" src="{{project.image.url}}"/>
+                  <p class="mt-1 project__summary">
+                    <span class="project__name">{{project.name}} </span>
+                    {{project.description}}
+                  </p>
+                  {% if project.tags %}
+                    <div class="mt-1">
+                      {% for tag in project.tags.all %}
+                        <span class="project__tag">{{tag.name}}</span>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </a>
+              {% endfor %}
+            </section>
+          {% endif %}
           <!--END PROJECTS SECTION-->
         </main>
         <!--END MAIN CONTENT-->
