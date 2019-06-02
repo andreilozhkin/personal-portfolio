@@ -23,5 +23,9 @@ class Job(models.Model):
 
         return '{} - {}'.format(self.start_date, self.end_date)
 
+    @property
+    def location(self):
+        return '{}, {}'.format(self.city, self.country)
+
     def __str__(self):
         return '{}, {} {}'.format(self.role, self.company, self.date)
