@@ -12,7 +12,6 @@ body {
   margin: 0;
   color: #24292e;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-size: 14px;
   line-height: 1.5;
 }
 
@@ -22,7 +21,7 @@ img {
 }
 
 h2 {
-  font-weight: 400;
+  font-weight: 500;
   text-align: center;
   font-size: 1.25rem;
 }
@@ -47,6 +46,14 @@ a {
 
 .mt-3 {
   margin-top:  3rem !important;
+}
+
+.mt-4 {
+  margin-top:  4rem !important;
+}
+
+.mt-5 {
+  margin-top:  5rem !important;
 }
 
 .pt-1 {
@@ -82,6 +89,7 @@ a {
   background: #1f2229;
   background-size: cover;
   transition: transform 0.5s;
+  z-index: 999;
 }
 
 .header.is-hidden {
@@ -140,7 +148,6 @@ a {
 
 .header__nav a {
   color: white;
-  font-size: 0.9rem;
   font-weight: 500;
   padding: 0 16px;
 }
@@ -189,27 +196,6 @@ a {
 
 
 /* ABOUT SECTION  */
-.anchor-offset {
-  display: block;
-  position: relative;
-  top: -40;
-}
-
-.anchor-offset--projects {
-  display: block;
-  position: relative;
-  top: -30;
-}
-
-.anchor-offset--about {
-  display: block;
-  position: absolute;
-  top: 0;
-}
-
-
-
-
 .about-wrapper {
   background-color: #282c34;
 }
@@ -244,7 +230,7 @@ a {
 .cli {
   background-color: #373942;
   max-width: 700px;
-  margin: -100px auto 0 auto;
+  margin: -95px auto 0 auto;
   padding: 10px;
   box-shadow: 0 5px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
@@ -265,6 +251,19 @@ a {
 }
 
 /* RESUME SECTION  */
+.gray-transition {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: all 0.5s ease;
+}
+
+.gray-transition:hover {
+  -webkit-filter: grayscale(0%);
+   -moz-filter: grayscale(0%);
+   filter: grayscale(0%);
+}
+
 .resume-wrapper {
   background-color: white;
 }
@@ -278,6 +277,7 @@ a {
 .resume-container h3 {
   margin: 2rem auto 0 auto;
   max-width: 720px;
+  font-weight: 500;
 }
 
 
@@ -291,7 +291,7 @@ a {
 .resume-card {
   display: flex;
   max-width: 720px;
-  margin: 2rem auto 2rem auto;
+  margin: 1rem auto 2rem auto;
 }
 
 .resume-card__image {
@@ -302,6 +302,7 @@ a {
   margin-left: -114px;
   object-fit: cover;
 }
+
 
 .resume-card__content {
   max-width: 720px;
@@ -315,7 +316,7 @@ a {
 }
 
 .card__company-name {
-  color: #282C34;
+  color: #1975e6;
   font-weight: 600;
 }
 
@@ -323,7 +324,8 @@ a {
   font-weight: 600;
 }
 
-.card__year, .card__year {
+.card__year, .card__city {
+  width: 130px;
   text-align: right;
 }
 
@@ -352,6 +354,11 @@ a {
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
+.project__image{
+  max-height: 300px;
+  object-fit: cover;
+}
+
 .project__name {
   font-weight: 600;
   color: #79E860;
@@ -363,7 +370,7 @@ a {
   font-weight: 600;
   width: auto;
   display: inline-block;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1rem;
   padding: 7px 18px;
   margin: 0.2rem;
@@ -371,6 +378,10 @@ a {
 
 
 @media (max-width: 1000px) {
+
+  html {
+    font-size: 14px;
+  }
 
   /* prevent iphone from resizing fonts when landscape mode  */
   p, h1, h2, h3, li {
@@ -431,10 +442,17 @@ a {
   .projects-grid {
     grid-gap: 2rem;
   }
+
 }
 
 @media (max-width: 600px) {
   .projects-grid {
     grid-template-columns: 1fr;
   }
+
+  .project__image{
+    max-height: 200px;
+    object-fit: cover;
+  }
+
 }
