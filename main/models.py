@@ -90,7 +90,6 @@ class Profile(models.Model):
     linkedin_url = models.URLField(blank=True, null=True)
     facebook_url = models.URLField(blank=True, null=True)
     github_url = models.URLField(blank=True, null=True)
-    favicon = models.ImageField(upload_to='profile', blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "profile"
@@ -103,3 +102,27 @@ class Profile(models.Model):
         if Profile.objects.exists() and not self.pk:
             raise ValidationError('There can be only one Profile instance')
         return super(Profile, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return 'Main Profile'
+
+
+class SiteMetaData(models.Model):
+    title = models.CharField(max_length=60, blank=True, null=True)
+    url = models.URLField(blank=True, null=True)
+    description = models.CharField(max_length=155, blank=True, null=True)
+    keywords = models.CharField(max_length=155, blank=True, null=True)
+    site_name = models.CharField(max_length=60, blank=True, null=True)
+    image = models.ImageField(upload_to='meta', blank=True, null=True)
+    favicon = models.ImageField(upload_to='meta', blank=True, null=True)
+
+    class Meta:
+        verbose_name_plural = "site meta data"
+
+    def save(self, *args, **kwargs):
+        if SiteMetaData.objects.exists() and not self.pk:
+            raise ValidationError('There can be only one SiteMetaData instance')
+        return super(SiteMetaData, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return 'Site Meta Data'

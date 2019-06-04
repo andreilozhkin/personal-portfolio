@@ -1,12 +1,20 @@
 {% load static %}
 <html>
     <head>
-        <title>{{profile.user.get_full_name}}</title>
+        <title>{{meta.title}}</title> <!-- IDEA: REPLACE WITH META DATA -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="{{meta.keywords}}"/>
+        <meta name="description" content="{{meta.description}}"/>
+        <meta name="url" content="{{meta.url}}">
+        <meta name="og:title" content="{{meta.title}}"/>
+        <meta name="og:url" content="{{meta.url}}"/>
+        <meta name="og:image" content="{{meta.image}"/>
+        <meta name="og:site_name" content="{{meta.site_name}}"/>
+        <meta name="og:description" content="{{meta.description}}"/>
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inconsolata" />
         <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
         <link rel="stylesheet" href="{% static 'main/css/fontello.css' %}">
-        <link rel="shortcut icon" type="image/png" href="{{profile.favicon.url}}"/>
+        <link rel="shortcut icon" type="image/png" href="{{meta.favicon.url}}"/>
     </head>
 
     <body>

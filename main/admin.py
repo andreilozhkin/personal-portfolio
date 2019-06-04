@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Job, Education, Project, Tag, Profile
+from .models import Job, Education, Project, Tag, Profile, SiteMetaData
 
 
 # Register your models here.
@@ -17,3 +17,4 @@ admin.site.register(Education)
 admin.site.register(Tag)
 admin.site.register(Profile)
 admin.site.register(Project, ProjectAdmin)
+admin.site.register(SiteMetaData)

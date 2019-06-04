@@ -151,6 +151,7 @@ a {
 
 .header__nav a {
   color: white;
+  font-size: 14px;
   font-weight: 400;
   padding: 0 16px;
 }
