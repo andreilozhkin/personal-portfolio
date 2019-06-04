@@ -27,8 +27,12 @@
             <nav class="header__nav">
               <ul>
                 <li><a href="#about" onclick="collapseMenu()">About</a></li>
-                <li><a href="#resume" onclick="collapseMenu()">Resume</a></li>
-                <li><a href="#projects" onclick="collapseMenu()">Projects</a></li>
+                {% if jobs or education %}
+                  <li><a href="#resume" onclick="collapseMenu()">Resume</a></li>
+                {% endif %}
+                {% if projects %}
+                  <li><a href="#projects" onclick="collapseMenu()">Projects</a></li>
+                {% endif %}
               </ul>
               <a class="nav__button" href="mailto:{{profile.user.email}}">Contact me</a>
             </nav>
