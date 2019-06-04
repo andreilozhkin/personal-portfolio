@@ -1,12 +1,12 @@
 {% load static %}
 <html>
     <head>
-        <title>Andrei Lozhkin</title>
+        <title>{{profile.user.get_full_name}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inconsolata" />
         <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
         <link rel="stylesheet" href="{% static 'main/css/fontello.css' %}">
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inconsolata" />
-
+        <link rel="shortcut icon" type="image/png" href="{{profile.favicon.url}}"/>
     </head>
 
     <body>
@@ -38,7 +38,7 @@
           <section class="hero-wrapper">
             <div class="hero-container">
               <a href="/"><img class="avatar" src="{{profile.avatar.url}}" alt="avatar"></a>
-              <h3 class="mt-1 hero__message">{{profile.message}}</h3>
+              <h3 class="mt-2 hero__message">{{profile.message}}</h3>
               <div class="social-icons" id="about">
                 {% if profile.linkedin_url%}
                   <a class="icon icon-linkedin-squared" href="{{profile.linkedin_url}}" target="_blank"></a>
@@ -121,7 +121,7 @@
                             </div>
                           </div>
                           <div class="mt-1 card__summary">
-                            <p>{{job.description}}</p>
+                            <p>{{job.description|safe}}</p>
                           </div>
                         </div>
                       </div>
@@ -150,7 +150,7 @@
                             </div>
                           </div>
                           <div class="mt-1 card__summary">
-                            <p>{{ed.description}}</p>
+                            <p>{{ed.description|safe}}</p>
                           </div>
                         </div>
                       </div>

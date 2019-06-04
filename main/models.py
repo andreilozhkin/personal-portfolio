@@ -12,7 +12,7 @@ class Job(models.Model):
     logo = models.ImageField(upload_to='companies')
     country = models.CharField(max_length=2)
     city = models.CharField(max_length=24)
-    role = models.CharField(max_length=30)
+    role = models.CharField(max_length=32)
     start_date = models.DateField()
     end_date = models.DateField(blank=True, null=True)
     description = models.TextField()
@@ -90,6 +90,7 @@ class Profile(models.Model):
     linkedin_url = models.URLField(blank=True, null=True)
     facebook_url = models.URLField(blank=True, null=True)
     github_url = models.URLField(blank=True, null=True)
+    favicon = models.ImageField(upload_to='profile', blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "profile"
