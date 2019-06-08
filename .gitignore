@@ -1,3 +1,6 @@
+### Environment
+env/
+
 
 ### Python ###
 __pycache__/
@@ -9,6 +12,7 @@ __pycache__/
 *.pot
 *.pyc
 __pycache__/
+admin/
 db.sqlite3
 media
 migrations
