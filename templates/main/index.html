@@ -1,7 +1,8 @@
 {% load static %}
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
     <head>
-        <title>{{meta.title}}</title> <!-- IDEA: REPLACE WITH META DATA -->
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="keywords" content="{{meta.keywords}}"/>
         <meta name="description" content="{{meta.description}}"/>
@@ -11,11 +12,10 @@
         <meta name="og:image" content="{{meta.image}"/>
         <meta name="og:site_name" content="{{meta.site_name}}"/>
         <meta name="og:description" content="{{meta.description}}"/>
-
+        <title>{{meta.title}}</title>
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inconsolata&display=swap" />
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/style.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/fontello.css' %}">
-
         <link rel="shortcut icon" type="image/png" href="{{meta.favicon.url}}"/>
     </head>
 
@@ -25,20 +25,20 @@
         <!--START HEADER SECTION-->
         <header class="header">
           <div class="header-container">
-            <h1 class="header__name"><a href="/">{{profile.user.get_full_name}}</a></h1>
+            <h1 class="header__name"><a href="/" aria-label="Main">{{profile.user.get_full_name}}</a></h1>
             <nav class="header__nav">
               <ul>
-                <li><a href="#about" onclick="collapseMenu()">About</a></li>
+                <li><a href="#about" aria-label="About me" onclick="collapseMenu()">About me</a></li>
                 {% if jobs or education %}
-                  <li><a href="#resume" onclick="collapseMenu()">Resume</a></li>
+                  <li><a href="#resume" aria-label="Resume" onclick="collapseMenu()">Resume</a></li>
                 {% endif %}
                 {% if projects %}
-                  <li><a href="#projects" onclick="collapseMenu()">Projects</a></li>
+                  <li><a href="#projects" aria-label="Projects" onclick="collapseMenu()">Projects</a></li>
                 {% endif %}
               </ul>
-              <a class="nav__button" href="mailto:{{profile.user.email}}">Contact me</a>
+              <a class="nav__button" aria-label="Contact me" href="mailto:{{profile.user.email}}">Contact me</a>
             </nav>
-            <a href="javascript:void(0)" class="mobile-menu" onclick="toggleMenu()">
+            <a href="javascript:void(0)" aria-label="Menu" class="mobile-menu" onclick="toggleMenu()">
               <span class="icon-menu"></span>
             </a>
           </div>
@@ -52,16 +52,16 @@
           <section class="hero-wrapper">
             <div class="hero-container">
               <a href="/"><img class="avatar" src="{{profile.avatar.url}}" alt="avatar"></a>
-              <h3 class="mt-2 hero__message">{{profile.message}}</h3>
+              <h1 class="mt-2 hero__message">{{profile.message}}</h1>
               <div class="social-icons" id="about">
                 {% if profile.linkedin_url%}
-                  <a class="icon icon-linkedin-squared" href="{{profile.linkedin_url}}" target="_blank"></a>
+                  <a class="icon icon-linkedin-squared" href="{{profile.linkedin_url}}" aria-label="Linkedin" target="_blank" rel="noopener noreferrer"></a>
                 {% endif %}
                 {% if profile.facebook_url%}
-                  <a class="icon icon-facebook-squared" href="{{profile.facebook_url}}" target="_blank"></a>
+                  <a class="icon icon-facebook-squared" href="{{profile.facebook_url}}" aria-label="Facebook" target="_blank" rel="noopener noreferrer"></a>
                 {% endif %}
                 {% if profile.github_url%}
-                  <a class="icon icon-github-squared" href="{{profile.github_url}}" target="_blank"></a>
+                  <a class="icon icon-github-squared" href="{{profile.github_url}}" aria-label="Github" target="_blank" rel="noopener noreferrer"></a>
                 {% endif %}
               </div>
             </div>
@@ -97,10 +97,10 @@
                   {% endif %}
 
                   <span class="cli-command"> >>> {{profile.user.first_name}}.resume </span><br>
-                  <a href="{{profile.resume.url}}" download> {{profile.user.get_full_name}}.pdf</a><br><br>
+                  <a href="{{profile.resume.url}}" aria-label="Download resume" download> {{profile.user.get_full_name}}.pdf</a><br><br>
 
                   <span class="cli-command"> >>> {{profile.user.first_name}}.email </span><br>
-                  <a href="mailto:{{profile.user.email}}">{{profile.user.email}}</a><br><br>
+                  <a href="mailto:{{profile.user.email}}" aria-label="Contact me">{{profile.user.email}}</a><br><br>
 
                   <span class="cli-command"> >>> exit() </span>
                 </p>
@@ -122,11 +122,11 @@
                     <div class="pt-1 line-separator"></div>
                     {% for job in jobs %}
                       <div class="resume-card">
-                        <a href="{{job.url}}" target="_blank"><img class="resume-card__image gray-transition" src="{{job.logo.url}}" alt="{{job.company}}"/></a>
+                        <a href="{{job.url}}" aria-label="Visit {{job.company}} website" target="_blank" rel="noopener noreferrer" ><img class="resume-card__image gray-transition" src="{{job.logo.url}}" alt="{{job.company}} logo"/></a>
                         <div class="resume-card__content">
                           <div class="resume-card__head">
                             <div>
-                              <a href="{{job.url}}" target="_blank" class="card__company-name">{{job.company}}</a>
+                              <a href="{{job.url}}" aria-label="Visit {{job.company}} website" target="_blank" rel="noopener noreferrer" class="card__company-name">{{job.company}}</a>
                               <p class="card__role">{{job.role}}</p>
                             </div>
                             <div>
@@ -151,11 +151,11 @@
                     <div class="pt-1 line-separator"></div>
                     {% for ed in education %}
                       <div class="resume-card">
-                        <a href="{{ed.url}}" target="_blank"><img class="resume-card__image gray-transition" src="{{ed.logo.url}}" alt="{{ed.university}}"/></a>
+                        <a href="{{ed.url}}" aria-label="Visit {{ed.university}} website" target="_blank" rel="noopener noreferrer"><img class="resume-card__image gray-transition" src="{{ed.logo.url}}" alt="{{ed.university}} logo"/></a>
                         <div class="resume-card__content">
                           <div class="resume-card__head">
                             <div>
-                              <a href="{{ed.url}}" target="_blank" class="card__company-name">{{ed.university}}</a>
+                              <a href="{{ed.url}}" aria-label="Visit {{ed.university}} website" target="_blank" rel="noopener noreferrer" class="card__company-name">{{ed.university}}</a>
                               <p class="card__role">{{ed.major}}</p>
                             </div>
                             <div>
@@ -182,8 +182,8 @@
             <h2 class="mt-2" style="color:white">Projects</h2>
             <section class="projects-grid" id="projects">
               {% for project in projects %}
-                <a href="{{project.url}}" target="_blank" class="project__card">
-                  <img class="project__image" src="{{project.image.url}}"/>
+                <a href="{{project.url}}" target="_blank" rel="noopener noreferrer" class="project__card">
+                  <img class="project__image" src="{{project.image.url}}" alt="{{project.name}}"/>
                   <p class="mt-1 project__summary">
                     <span class="project__name">{{project.name}} </span>
                     {{project.description}}
