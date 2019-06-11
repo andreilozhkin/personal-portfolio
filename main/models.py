@@ -114,7 +114,6 @@ class SiteMetaData(models.Model):
     keywords = models.CharField(max_length=155, blank=True, null=True)
     site_name = models.CharField(max_length=60, blank=True, null=True)
     image = models.ImageField(upload_to='meta', blank=True, null=True)
-    favicon = models.ImageField(upload_to='meta', blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "site meta data"

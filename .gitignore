@@ -18,3 +18,4 @@ media
 migrations
 settings/prod.py
 key.py
+favicon/
