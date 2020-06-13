@@ -19,3 +19,7 @@ migrations
 settings/prod.py
 key.py
 favicon/
+
+### Devops ###
+Dockerfile.local
+docker-compose.yml
