@@ -92,7 +92,7 @@
             <div class="about-container">
               <div class="cli">
                 <div class="cli-tab">
-                  <p>about.py</p>
+                  <p>about.py test2</p>
                 </div>
                 <p class="cli-code">
                   <span class="cli-command"> >>> from web_developers import {{profile.user.first_name}} </span><br><br>
@@ -224,7 +224,7 @@
 
         <!--START FOOTER-->
         <footer class="footer">
-          <p>© 2019 {{profile.user.get_full_name}}.</p>
+          <p>© {% now 'Y' %} {{profile.user.get_full_name}}</p>
         </footer>
         <!--END FOOTER-->
       </div>
