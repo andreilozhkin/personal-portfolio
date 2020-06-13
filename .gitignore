@@ -22,3 +22,4 @@ favicon/
 ### Devops ###
 Dockerfile.local
 docker-compose.yml
+deploy.py
