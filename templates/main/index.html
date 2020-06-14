@@ -1,235 +1,245 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="keywords" content="{{meta.keywords}}"/>
-        <meta name="description" content="{{meta.description}}"/>
-        <meta name="url" content="{{meta.url}}">
-        <meta name="og:title" content="{{meta.title}}"/>
-        <meta name="og:url" content="{{meta.url}}"/>
-        <meta name="og:image" content="{{meta.image}"/>
-        <meta name="og:site_name" content="{{meta.site_name}}"/>
-        <meta name="og:description" content="{{meta.description}}"/>
-        <title>{{meta.title}}</title>
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inconsolata&display=swap" />
-        <link rel="stylesheet" type="text/css" href="{% static 'main/css/style.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'main/css/fontello.css' %}">
+  <head>
+    {% if meta.google_tracking_id %}
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{meta.google_tracking_id}}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', "{{meta.google_tracking_id}}");
+      </script>
+    {% endif %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="{{meta.keywords}}"/>
+    <meta name="description" content="{{meta.description}}"/>
+    <meta name="url" content="{{meta.url}}">
+    <meta name="og:title" content="{{meta.title}}"/>
+    <meta name="og:url" content="{{meta.url}}"/>
+    <meta name="og:image" content="{{meta.image}"/>
+    <meta name="og:site_name" content="{{meta.site_name}}"/>
+    <meta name="og:description" content="{{meta.description}}"/>
+    <title>{{meta.title}}</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inconsolata&display=swap" />
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/fontello.css' %}">
 
-        <!--FAVICON START-->
-        <link rel="apple-touch-icon" sizes="57x57" href="{% static 'favicon/apple-icon-57x57.png' %}">
-        <link rel="apple-touch-icon" sizes="60x60" href="{% static 'favicon/apple-icon-60x60.png' %}">
-        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'favicon/apple-icon-72x72.png' %}">
-        <link rel="apple-touch-icon" sizes="76x76" href="{% static 'favicon/apple-icon-76x76.png' %}">
-        <link rel="apple-touch-icon" sizes="114x114" href="{% static 'favicon/apple-icon-114x114.png' %}">
-        <link rel="apple-touch-icon" sizes="120x120" href="{% static 'favicon/apple-icon-120x120.png' %}">
-        <link rel="apple-touch-icon" sizes="144x144" href="{% static 'favicon/apple-icon-144x144.png' %}">
-        <link rel="apple-touch-icon" sizes="152x152" href="{% static 'favicon/apple-icon-152x152.png' %}">
-        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-icon-180x180.png' %}">
-        <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'favicon/android-icon-192x192.png' %}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
-        <link rel="icon" type="image/png" sizes="96x96" href="{% static 'favicon/favicon-96x96.png' %}">
-        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
-        <link rel="manifest" href="{% static 'favicon/manifest.json' %}">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="{% static 'favicon/ms-icon-144x144.png' %}">
-        <meta name="theme-color" content="#ffffff">
-        <!--FAVICON END-->
-    </head>
+    <!--FAVICON START-->
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'favicon/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'favicon/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'favicon/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'favicon/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'favicon/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'favicon/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'favicon/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'favicon/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'favicon/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'favicon/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'favicon/manifest.json' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'favicon/ms-icon-144x144.png' %}">
+    <meta name="theme-color" content="#ffffff">
+    <!--FAVICON END-->
+  </head>
 
-    <body>
-      <div class="grid-layout">
+  <body>
+    <div class="grid-layout">
 
-        <!--START HEADER SECTION-->
-        <header class="header">
-          <div class="header-container">
-            <h1 class="header__name"><a href="/" aria-label="Main">{{profile.user.get_full_name}}</a></h1>
-            <nav class="header__nav">
-              <ul>
-                <li><a href="#about" aria-label="About me" onclick="collapseMenu()">About me</a></li>
-                {% if jobs or education %}
-                  <li><a href="#resume" aria-label="Resume" onclick="collapseMenu()">Resume</a></li>
-                {% endif %}
-                {% if projects %}
-                  <li><a href="#projects" aria-label="Projects" onclick="collapseMenu()">Projects</a></li>
-                {% endif %}
-              </ul>
-              <a class="nav__button" aria-label="Contact me" href="mailto:{{profile.user.email}}">Contact me</a>
-            </nav>
-            <a href="javascript:void(0)" aria-label="Menu" class="mobile-menu" onclick="toggleMenu()">
-              <span class="icon-menu"></span>
-            </a>
+      <!--START HEADER SECTION-->
+      <header class="header">
+        <div class="header-container">
+          <h1 class="header__name"><a href="/" aria-label="Main">{{profile.user.get_full_name}}</a></h1>
+          <nav class="header__nav">
+            <ul>
+              <li><a href="#about" aria-label="About me" onclick="collapseMenu()">About me</a></li>
+              {% if jobs or education %}
+                <li><a href="#resume" aria-label="Resume" onclick="collapseMenu()">Resume</a></li>
+              {% endif %}
+              {% if projects %}
+                <li><a href="#projects" aria-label="Projects" onclick="collapseMenu()">Projects</a></li>
+              {% endif %}
+            </ul>
+            <a class="nav__button" aria-label="Contact me" href="mailto:{{profile.user.email}}">Contact me</a>
+          </nav>
+          <a href="javascript:void(0)" aria-label="Menu" class="mobile-menu" onclick="toggleMenu()">
+            <span class="icon-menu"></span>
+          </a>
+        </div>
+      </header>
+      <!--END HEADER SECTION-->
+
+      <!--START MAIN CONTENT-->
+      <main class="main">
+
+        <!--START HERO SECTION-->
+        <section class="hero-wrapper">
+          <div class="hero-container">
+            <a href="/"><img class="avatar" src="{{profile.avatar.url}}" alt="avatar"></a>
+            <h1 class="mt-2 hero__message">{{profile.message}}</h1>
+            <div class="social-icons" id="about">
+              {% if profile.linkedin_url%}
+                <a class="icon icon-linkedin-squared" href="{{profile.linkedin_url}}" aria-label="Linkedin" target="_blank" rel="noopener noreferrer"></a>
+              {% endif %}
+              {% if profile.facebook_url%}
+                <a class="icon icon-facebook-squared" href="{{profile.facebook_url}}" aria-label="Facebook" target="_blank" rel="noopener noreferrer"></a>
+              {% endif %}
+              {% if profile.github_url%}
+                <a class="icon icon-github-squared" href="{{profile.github_url}}" aria-label="Github" target="_blank" rel="noopener noreferrer"></a>
+              {% endif %}
+            </div>
           </div>
-        </header>
-        <!--END HEADER SECTION-->
+        </section>
+        <!--END HERO SECTION-->
 
-        <!--START MAIN CONTENT-->
-        <main class="main">
-
-          <!--START HERO SECTION-->
-          <section class="hero-wrapper">
-            <div class="hero-container">
-              <a href="/"><img class="avatar" src="{{profile.avatar.url}}" alt="avatar"></a>
-              <h1 class="mt-2 hero__message">{{profile.message}}</h1>
-              <div class="social-icons" id="about">
-                {% if profile.linkedin_url%}
-                  <a class="icon icon-linkedin-squared" href="{{profile.linkedin_url}}" aria-label="Linkedin" target="_blank" rel="noopener noreferrer"></a>
-                {% endif %}
-                {% if profile.facebook_url%}
-                  <a class="icon icon-facebook-squared" href="{{profile.facebook_url}}" aria-label="Facebook" target="_blank" rel="noopener noreferrer"></a>
-                {% endif %}
-                {% if profile.github_url%}
-                  <a class="icon icon-github-squared" href="{{profile.github_url}}" aria-label="Github" target="_blank" rel="noopener noreferrer"></a>
-                {% endif %}
+        <!--START CLI ABOUT SECTION-->
+        <section class="about-wrapper">
+          <div class="about-container">
+            <div class="cli">
+              <div class="cli-tab">
+                <p>about.py</p>
               </div>
-            </div>
-          </section>
-          <!--END HERO SECTION-->
+              <p class="cli-code">
+                <span class="cli-command"> >>> from web_developers import {{profile.user.first_name}} </span><br><br>
 
-          <!--START CLI ABOUT SECTION-->
-          <section class="about-wrapper">
-            <div class="about-container">
-              <div class="cli">
-                <div class="cli-tab">
-                  <p>about.py</p>
-                </div>
-                <p class="cli-code">
-                  <span class="cli-command"> >>> from web_developers import {{profile.user.first_name}} </span><br><br>
-
-                  <span class="cli-command"> >>> {{profile.user.first_name}}.origin </span><br>
-                  {{profile.origin}} <br><br>
-                  {% if education %}
-                      <span class="cli-command"> >>> {{profile.user.first_name}}.education.latest </span><br>
-                      {{education.first.university}}<br>
-                      major: {{education.first.major}}<br>
-                      start_date: {{education.first.start_date|date:"F, Y"}}<br>
-                      end_date: {{education.first.end_date|date:"F, Y"|default:"None"}}<br><br>
-                  {% endif %}
-
-                  {% if jobs %}
-                    <span class="cli-command"> >>> {{profile.user.first_name}}.work_experience.latest </span><br>
-                    company: {{jobs.first.company}}<br>
-                    role: {{jobs.first.role}}<br>
-                    start_date: {{jobs.first.start_date|date:"F, Y"}}<br>
-                    end_date: {{jobs.first.end_date|date:"F Y"|default:"None"}}<br><br>
-                  {% endif %}
-
-                  <span class="cli-command"> >>> {{profile.user.first_name}}.resume </span><br>
-                  <a href="{{profile.resume.url}}" aria-label="Download resume" download> {{profile.user.get_full_name}}.pdf</a><br><br>
-
-                  <span class="cli-command"> >>> {{profile.user.first_name}}.email </span><br>
-                  <a href="mailto:{{profile.user.email}}" aria-label="Contact me">{{profile.user.email}}</a><br><br>
-
-                  <span class="cli-command"> >>> exit() </span>
-                </p>
-              </div>
-            </div>
-          </section>
-          <!--END CLI ABOUT SECTION-->
-
-          <!--START RESUME SECTION-->
-          {% if jobs or education %}
-            <section class="resume-wrapper" id="resume">
-              <div class="resume-container">
-                <h2 class="mt-2">Resume</h2>
-
-                <!--work experience-->
-                {% if jobs %}
-                  <div>
-                    <h3>Work Experience</h3>
-                    <div class="pt-1 line-separator"></div>
-                    {% for job in jobs %}
-                      <div class="resume-card">
-                        <a href="{{job.url}}" aria-label="Visit {{job.company}} website" target="_blank" rel="noopener noreferrer" ><img class="resume-card__image gray-transition" src="{{job.logo.url}}" alt="{{job.company}} logo"/></a>
-                        <div class="resume-card__content">
-                          <div class="resume-card__head">
-                            <div>
-                              <a href="{{job.url}}" aria-label="Visit {{job.company}} website" target="_blank" rel="noopener noreferrer" class="card__company-name">{{job.company}}</a>
-                              <p class="card__role">{{job.role}}</p>
-                            </div>
-                            <div>
-                              <p class="card__year">{{job.start_date|date:"M Y"}} - {{job.end_date|date:"M Y"|default:"Present"}}</p>
-                              <p class="card__city">{{job.location}}</p>
-                            </div>
-                          </div>
-                          <div class="mt-1 card__summary">
-                            <p>{{job.description|safe}}</p>
-                          </div>
-                        </div>
-                      </div>
-                    {% endfor %}
-                  </div>
-                {% endif %}
-                <!--end work experience-->
-
-                <!--education-->
+                <span class="cli-command"> >>> {{profile.user.first_name}}.origin </span><br>
+                {{profile.origin}} <br><br>
                 {% if education %}
-                  <div>
-                    <h3 class="mt-3">Education</h3>
-                    <div class="pt-1 line-separator"></div>
-                    {% for ed in education %}
-                      <div class="resume-card">
-                        <a href="{{ed.url}}" aria-label="Visit {{ed.university}} website" target="_blank" rel="noopener noreferrer"><img class="resume-card__image gray-transition" src="{{ed.logo.url}}" alt="{{ed.university}} logo"/></a>
-                        <div class="resume-card__content">
-                          <div class="resume-card__head">
-                            <div>
-                              <a href="{{ed.url}}" aria-label="Visit {{ed.university}} website" target="_blank" rel="noopener noreferrer" class="card__company-name">{{ed.university}}</a>
-                              <p class="card__role">{{ed.major}}</p>
-                            </div>
-                            <div>
-                              <p class="card__year">{{ed.start_date|date:"M Y"}} - {{ed.end_date|date:"M Y"|default:"Present"}}</p>
-                              <p class="card__city">{{ed.location}}</p>
-                            </div>
+                    <span class="cli-command"> >>> {{profile.user.first_name}}.education.latest </span><br>
+                    {{education.first.university}}<br>
+                    major: {{education.first.major}}<br>
+                    start_date: {{education.first.start_date|date:"F, Y"}}<br>
+                    end_date: {{education.first.end_date|date:"F, Y"|default:"None"}}<br><br>
+                {% endif %}
+
+                {% if jobs %}
+                  <span class="cli-command"> >>> {{profile.user.first_name}}.work_experience.latest </span><br>
+                  company: {{jobs.first.company}}<br>
+                  role: {{jobs.first.role}}<br>
+                  start_date: {{jobs.first.start_date|date:"F, Y"}}<br>
+                  end_date: {{jobs.first.end_date|date:"F Y"|default:"None"}}<br><br>
+                {% endif %}
+
+                <span class="cli-command"> >>> {{profile.user.first_name}}.resume </span><br>
+                <a href="{{profile.resume.url}}" aria-label="Download resume" download> {{profile.user.get_full_name}}.pdf</a><br><br>
+
+                <span class="cli-command"> >>> {{profile.user.first_name}}.email </span><br>
+                <a href="mailto:{{profile.user.email}}" aria-label="Contact me">{{profile.user.email}}</a><br><br>
+
+                <span class="cli-command"> >>> exit() </span>
+              </p>
+            </div>
+          </div>
+        </section>
+        <!--END CLI ABOUT SECTION-->
+
+        <!--START RESUME SECTION-->
+        {% if jobs or education %}
+          <section class="resume-wrapper" id="resume">
+            <div class="resume-container">
+              <h2 class="mt-2">Resume</h2>
+
+              <!--work experience-->
+              {% if jobs %}
+                <div>
+                  <h3>Work Experience</h3>
+                  <div class="pt-1 line-separator"></div>
+                  {% for job in jobs %}
+                    <div class="resume-card">
+                      <a href="{{job.url}}" aria-label="Visit {{job.company}} website" target="_blank" rel="noopener noreferrer" ><img class="resume-card__image gray-transition" src="{{job.logo.url}}" alt="{{job.company}} logo"/></a>
+                      <div class="resume-card__content">
+                        <div class="resume-card__head">
+                          <div>
+                            <a href="{{job.url}}" aria-label="Visit {{job.company}} website" target="_blank" rel="noopener noreferrer" class="card__company-name">{{job.company}}</a>
+                            <p class="card__role">{{job.role}}</p>
                           </div>
-                          <div class="mt-1 card__summary">
-                            <p>{{ed.description|safe}}</p>
+                          <div>
+                            <p class="card__year">{{job.start_date|date:"M Y"}} - {{job.end_date|date:"M Y"|default:"Present"}}</p>
+                            <p class="card__city">{{job.location}}</p>
                           </div>
                         </div>
+                        <div class="mt-1 card__summary">
+                          <p>{{job.description|safe}}</p>
+                        </div>
                       </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              <!--end work experience-->
+
+              <!--education-->
+              {% if education %}
+                <div>
+                  <h3 class="mt-3">Education</h3>
+                  <div class="pt-1 line-separator"></div>
+                  {% for ed in education %}
+                    <div class="resume-card">
+                      <a href="{{ed.url}}" aria-label="Visit {{ed.university}} website" target="_blank" rel="noopener noreferrer"><img class="resume-card__image gray-transition" src="{{ed.logo.url}}" alt="{{ed.university}} logo"/></a>
+                      <div class="resume-card__content">
+                        <div class="resume-card__head">
+                          <div>
+                            <a href="{{ed.url}}" aria-label="Visit {{ed.university}} website" target="_blank" rel="noopener noreferrer" class="card__company-name">{{ed.university}}</a>
+                            <p class="card__role">{{ed.major}}</p>
+                          </div>
+                          <div>
+                            <p class="card__year">{{ed.start_date|date:"M Y"}} - {{ed.end_date|date:"M Y"|default:"Present"}}</p>
+                            <p class="card__city">{{ed.location}}</p>
+                          </div>
+                        </div>
+                        <div class="mt-1 card__summary">
+                          <p>{{ed.description|safe}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              <!--end education-->
+            </div>
+          </section>
+        {% endif %}
+        <!--END RESUME SECTION-->
+
+        <!--START PROJECTS SECTION-->
+        {% if projects %}
+          <h2 class="mt-2" style="color:white">Projects</h2>
+          <section class="projects-grid" id="projects">
+            {% for project in projects %}
+              <a {% if project.url %} href="{{project.url}}" {% endif %} target="_blank" rel="noopener noreferrer" class="project__card">
+                {% if not project.url %} <h3 class="ribbon"> Not deployed </h3> {% endif %}
+                <img class="project__image" src="{{project.image.url}}" alt="{{project.name}}"/>
+                <p class="mt-1 project__summary">
+                  <span class="project__name">{{project.name}} </span>
+                  {{project.description}}
+                </p>
+                {% if project.tags %}
+                  <div class="mt-1">
+                    {% for tag in project.tags.all %}
+                      <span class="project__tag">{{tag.name}}</span>
                     {% endfor %}
                   </div>
                 {% endif %}
-                <!--end education-->
-              </div>
-            </section>
-          {% endif %}
-          <!--END RESUME SECTION-->
+              </a>
+            {% endfor %}
+          </section>
+        {% endif %}
+        <!--END PROJECTS SECTION-->
+      </main>
+      <!--END MAIN CONTENT-->
 
-          <!--START PROJECTS SECTION-->
-          {% if projects %}
-            <h2 class="mt-2" style="color:white">Projects</h2>
-            <section class="projects-grid" id="projects">
-              {% for project in projects %}
-                <a {% if project.url %} href="{{project.url}}" {% endif %} target="_blank" rel="noopener noreferrer" class="project__card">
-                  {% if not project.url %} <h3 class="ribbon"> Not deployed </h3> {% endif %}
-                  <img class="project__image" src="{{project.image.url}}" alt="{{project.name}}"/>
-                  <p class="mt-1 project__summary">
-                    <span class="project__name">{{project.name}} </span>
-                    {{project.description}}
-                  </p>
-                  {% if project.tags %}
-                    <div class="mt-1">
-                      {% for tag in project.tags.all %}
-                        <span class="project__tag">{{tag.name}}</span>
-                      {% endfor %}
-                    </div>
-                  {% endif %}
-                </a>
-              {% endfor %}
-            </section>
-          {% endif %}
-          <!--END PROJECTS SECTION-->
-        </main>
-        <!--END MAIN CONTENT-->
-
-        <!--START FOOTER-->
-        <footer class="footer">
-          <p>© {% now 'Y' %} {{profile.user.get_full_name}}</p>
-        </footer>
-        <!--END FOOTER-->
-      </div>
-    </body>
-    <script type="text/javascript" src="{% static 'main/js/zenscroll-min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'main/js/main.js' %}"></script>
+      <!--START FOOTER-->
+      <footer class="footer">
+        <p>© {% now 'Y' %} {{profile.user.get_full_name}}</p>
+      </footer>
+      <!--END FOOTER-->
+    </div>
+  </body>
+  <script type="text/javascript" src="{% static 'main/js/zenscroll-min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'main/js/main.js' %}"></script>
 </html>
