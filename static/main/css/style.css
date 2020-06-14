@@ -17,8 +17,8 @@ body {
 }
 
 img {
-     width:100%;
-     height:auto;
+  width:100%;
+  height:auto;
 }
 
 h2 {
@@ -94,10 +94,10 @@ a {
 }
 
 .header.is-hidden {
-    transform: translateY(-500%);
+  transform: translateY(-500%);
 }
 .header.is-visible {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .main {
@@ -135,9 +135,9 @@ a {
 
 /* HEADER NAV ON RIGHT */
 .header__nav {
-    display: flex;
-    align-items: center;
-    color: white;
+  display: flex;
+  align-items: center;
+  color: white;
 }
 
 .header__nav ul {
@@ -206,7 +206,7 @@ a {
 
 /* Reduce margin, default: 9.6 */
 .icon::before {
-    margin: 3px !important;
+  margin: 3px !important;
 }
 
 .icon:hover {
@@ -279,8 +279,8 @@ a {
 
 .gray-transition:hover {
   -webkit-filter: grayscale(0%);
-   -moz-filter: grayscale(0%);
-   filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  filter: grayscale(0%);
 }
 
 .resume-wrapper {
@@ -362,11 +362,11 @@ a {
 .project__card {
   overflow: hidden;
   position: relative;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    padding: 1rem;
-    background-color: #373942;
-    color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  padding: 1rem;
+  background-color: #373942;
+  color: white;
 }
 
 .project__card:hover {
