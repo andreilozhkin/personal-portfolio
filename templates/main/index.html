@@ -201,7 +201,8 @@
             <h2 class="mt-2" style="color:white">Projects</h2>
             <section class="projects-grid" id="projects">
               {% for project in projects %}
-                <a href="{{project.url}}" target="_blank" rel="noopener noreferrer" class="project__card">
+                <a {% if project.url %} href="{{project.url}}" {% endif %} target="_blank" rel="noopener noreferrer" class="project__card">
+                  {% if not project.url %} <h3 class="ribbon"> Not deployed </h3> {% endif %}
                   <img class="project__image" src="{{project.image.url}}" alt="{{project.name}}"/>
                   <p class="mt-1 project__summary">
                     <span class="project__name">{{project.name}} </span>

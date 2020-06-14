@@ -62,7 +62,7 @@ class Project(models.Model):
     name = models.CharField(max_length=20)
     image = models.ImageField(upload_to='projects')
     description = models.TextField()
-    url = models.URLField()
+    url = models.URLField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
