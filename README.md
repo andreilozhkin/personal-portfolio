@@ -6,15 +6,14 @@ This portfolio is built with [Django](https://github.com/django/django) and lots
 
 ## Installation
 
-1. Clone repo: `git clone https://github.com/andreilozhkin/personal-portfolio`
+1. Clone repo: `git clone https://https://github.com/lozhkinandrei/personal-portfolio`
 2. Switch to newly created folder: `cd personal-portfolio`
 3. Install dependencies: `pip install -r requirements.txt`
 
 
 ## Setting Up
-1. `python manage.py makemigrations main`
-2. `python manage.py migrate`
-3. Create superuser: `python manage.py createsuperuser`
+1. `python manage.py migrate`
+2. Create superuser: `python manage.py createsuperuser`
 
 
 ## Adding Information (Optional)
